@@ -8,4 +8,4 @@
 - DÙng mock data tự tạo được lưu trong 1 file json.
 ## Yêu cầu chức năng
 - Xem các món ăn tại cửa hàng
-<img src="/ìmg/view.png" />
+!(/img/view.png)
