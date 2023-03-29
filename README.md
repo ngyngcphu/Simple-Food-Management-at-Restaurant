@@ -17,6 +17,7 @@
 ### 2. Các chức năng phụ
 - Tìm kiếm món ăn.
 - Filter món ăn.
+![filter](/img/filter.png)
 ## Class diagram
 - Chỉ 1 class diagram.
 ## Hướng dẫn setup môi trường code
