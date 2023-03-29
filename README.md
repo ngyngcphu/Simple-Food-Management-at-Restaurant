@@ -5,7 +5,7 @@
 ## Yêu cầu kĩ thuật
 - Chỉ cần hiện thực UI theo chức năng và các logic xử lý ở phía front-end.
 - Không cần hiện thực back-end.
-- DÙng mock data tự tạo được lưu trong 1 file json.
+- Dùng mock data tự tạo được lưu trong 1 file json.
 ## Yêu cầu chức năng
 ### 1. Các chức năng chính
 - Xem các món ăn tại cửa hàng (chia theo combo, đồ ăn, thức uống, khai vị, tráng miệng)
@@ -24,4 +24,5 @@
 - nodejs (nếu chưa cài đặt thì tải về tại https://nodejs.org/en/download)
 - Sau khi cài xong chạy các câu lệnh dưới đây (output như hình dưới -> oke).
 ![node-npm](/img/node-npm.png)
+- Tải git và tạo tài khoản github (nếu chưa có)
 
