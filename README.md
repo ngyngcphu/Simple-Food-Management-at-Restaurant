@@ -20,6 +20,9 @@
 ![filter](/img/filter.png)
 ## Class diagram
 - Chỉ 1 class diagram.
+## Công nghệ sử dụng
+- ReactJS (một thư viện javascript dùng cho frontend). Document của ReactJS tại đây https://vi.reactjs.org/docs/add-react-to-a-website.html (lưu ý nên đọc phiên bản cũ này - có hỗ trợ tiếng Việt).
+- Bootstrap (một framework CSS)
 ## Hướng dẫn setup môi trường code
 - VSCode
 - nodejs (nếu chưa cài đặt thì tải về tại https://nodejs.org/en/download)
