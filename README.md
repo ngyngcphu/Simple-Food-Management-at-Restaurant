@@ -30,4 +30,6 @@
 - Sau khi cài xong chạy các câu lệnh dưới đây (output như hình dưới -> oke).
 ![node-npm](/img/node-npm.png)
 - Tải git và tạo tài khoản github (nếu chưa có)
-
+## Cấu trúc thư mục dự ns
+![structure](/img/structure.png)
+- **app**: thư mục front-end
