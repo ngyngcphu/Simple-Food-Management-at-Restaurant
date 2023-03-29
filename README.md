@@ -21,7 +21,7 @@
 - Chỉ 1 class diagram.
 ## Hướng dẫn setup môi trường code
 - VSCode
-- nodejs (nếu chưa cài đặt thì tải về tại https://progit2.s3.amazonaws.com/en/2016-03-22-f3531/progit-en.1084.pdf)
+- nodejs (nếu chưa cài đặt thì tải về tại https://nodejs.org/en/download)
 - Sau khi cài xong chạy các câu lệnh dưới đây (output như hình dưới -> oke).
 ![node-npm](/img/node-npm.png)
 
