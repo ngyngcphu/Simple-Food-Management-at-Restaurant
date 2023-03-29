@@ -21,6 +21,7 @@
 ## Class diagram
 - Chỉ 1 class diagram.
 ## Công nghệ sử dụng
+- Ngôn ngữ: HTML/CSS/
 - ReactJS (một thư viện javascript dùng cho frontend). Document của ReactJS tại đây https://vi.reactjs.org/docs/add-react-to-a-website.html (lưu ý nên đọc phiên bản cũ này - có hỗ trợ tiếng Việt).
 - Bootstrap (một framework CSS)
 ## Hướng dẫn setup môi trường code
