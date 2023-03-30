@@ -37,7 +37,7 @@
 - Chạy lệnh ```npm start``` để chạy ứng dụng (gõ **localhost:3000** trên trình duyệt để thấy kết quả)
 ## Cấu trúc thư mục app (front-end)
 ![structure](/img/structure.png)
-- node_modules: folder này là môi trường để chạy ReactJS (chỉ xuất hiện khi clone project và chạy lệnh ```npm start```).
+- node_modules: folder này là môi trường để chạy ReactJS (chỉ xuất hiện khi clone project và chạy lệnh ```npm install```).
 - public: folder chứa template HTML (không sửa đổi folder này trong suốt quá trình code).
 - src: chỉ cần quan tâm các file/folder sau: folder **components** (chứa các file jsx), file **App.js** tổng hợp các file trong **components**, file **index.js** dùng để render ra file **App.js** ra màn hình).
 - .gitignore: chỉ định file/folder nào không được push lên github (node_modules)
