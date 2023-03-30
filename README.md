@@ -30,6 +30,11 @@
 - Sau khi cài xong chạy các câu lệnh dưới đây (output như hình dưới -> oke).
 ![node-npm](/img/node-npm.png)
 - Tải git và tạo tài khoản github (nếu chưa có)
+## Hướng dẫn chạy code
+- Clone project trên bằng cách chạy lệnh ```git clone https://github.com/ngyngcphu/Simple-Food-Management-at-Restaurant.git```
+- Tiếp theo ```cd app```
+- Chạy lệnh ```npm install``` (sau đó node_modules sẽ tự cài trong app)
+- Chạy lệnh ```npm start``` để chạy ứng dụng (gõ **localhost:3000** trên trình duyệt để thấy kết quả)
 ## Cấu trúc thư mục app (front-end)
 ![structure](/img/structure.png)
 - node_modules: folder này là môi trường để chạy ReactJS (chỉ xuất hiện khi clone project và chạy lệnh ```npm start```).
@@ -37,4 +42,9 @@
 - src: chỉ cần quan tâm các file/folder sau: folder **components** (chứa các file jsx), file **App.js** tổng hợp các file trong **components**, file **index.js** dùng để render ra file **App.js** ra màn hình).
 - .gitignore: chỉ định file/folder nào không được push lên github (node_modules)
 - package.json, package-lock.json: chứa các thông tin dự án bao gồm các thư viện và các đoạn scripts để chạy code.
+## Các nguyên tắc khi làm việc nhóm trên github
+- Luôn luôn ```git pull``` mỗi khi bắt đầu code (tránh các conflict phiền phức).
+- Không được push trực tiếp lên nhánh **main** (sẽ bị chặn khi ```git push -u origin main```)
+- Thay vào đó tạo ra branch riêng bằng lệnh ```git checkout -b <name_branch>``` (Ví dụ ```git checkout -b feat/foodlist```)
+- Sau đó push lên github và tạo một Pull requests. Leader sẽ check và review code trước khi merge vào nhánh main.
 
