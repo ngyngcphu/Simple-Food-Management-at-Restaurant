@@ -1,8 +1,8 @@
-import './App.css';
+import NavBar from './components/NavBar';
 
 function App() {
   return (
-    <div>Simple Food Management at Restaurant</div>
+    <NavBar />
   );
 }
 
