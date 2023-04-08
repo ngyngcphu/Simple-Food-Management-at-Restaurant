@@ -12,14 +12,14 @@ class FoodType extends Component {
 
     render() {
         return (
-            <div style={{ backgroundColor: '#AFEEEE', height: '100px', width: '100%' }}
+            <div style={{ backgroundColor: '#E9E9E9', height: '100px', width: '100%' }}
             >
                 {this.state.lists.map((list, index) => (
                     <Button key={index} className="btn btn-light"
                         variant="primary" onClick={() => this.setState({ type: list })}
                         style={this.state.type === list ? {
                             width: '150px', height: '52px', backgroundColor: '#ffffff',
-                            borderColor: '#F63C3C', fontWeight: 'bold', color: '#F63C3C', 
+                            borderColor: '#F63C3C', fontWeight: 'bold', color: '#F63C3C',
                             margin: '25px 25px 25px 67px', borderRadius: '50px', boxShadow: '1px 1px #F63C3C'
                         } : {
                             width: '150px', height: '52px', backgroundColor: '#ffffff',
@@ -32,6 +32,5 @@ class FoodType extends Component {
         );
     }
 }
-
 
 export default FoodType;

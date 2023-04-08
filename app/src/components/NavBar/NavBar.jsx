@@ -15,7 +15,7 @@ class NavBar extends Component {
 
     render() {
         return (
-            <Navbar bg="light" expand="lg">
+            <Navbar bg="white" expand="lg">
                 <Container fluid>
                     <Navbar.Brand href="#" className="navItem">
                         <img src={logo} alt='Food Store' width="50" className="me-2" />
