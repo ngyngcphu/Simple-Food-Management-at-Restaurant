@@ -66,22 +66,6 @@
         },
         {
             "id": 8,
-            "name": "Combo Cá Hồi",
-            "price": 237000,
-            "discount": "50%",
-            "imageUrls": "https://www.topuytin.com/wp-content/uploads/2018/05/fresh-salmon-sushi-rolls.jpg",
-            "type": "Combo"
-        },
-        {
-            "id": 9,
-            "name": "Combo Sushi",
-            "price": 150000,
-            "discount": "50%",
-            "imageUrls": "https://kenh14cdn.com/2019/1/22/5bc7df9876ec5729a74dbca5-2018-10-18-011920-15481331553641106349192.jpg",
-            "type": "Combo"
-        },
-        {
-            "id": 10,
             "name": "Gà Chiên",
             "price": 50000,
             "discount": "20%",
@@ -89,7 +73,7 @@
             "type": "Foody"
         },
         {
-            "id": 11,
+            "id": 9,
             "name": "Pizza",
             "price": 137000,
             "discount": "0%",
@@ -97,7 +81,7 @@
             "type": "Foody"
         },
         {
-            "id": 12,
+            "id": 10,
             "name": "Mì Ý",
             "price": 98000,
             "discount": "50%",
@@ -105,7 +89,7 @@
             "type": "Foody"
         },
         {
-            "id": 13,
+            "id": 11,
             "name": "Cua Hầm Cay",
             "price": 351000,
             "discount": "50%",
@@ -113,7 +97,7 @@
             "type": "Foody"
         },
         {
-            "id": 14,
+            "id": 12,
             "name": "Rice noodle",
             "price": 57000,
             "discount": "50%",
@@ -121,7 +105,7 @@
             "type": "Foody"
         },
         {
-            "id": 15,
+            "id": 13,
             "name": "Bít Tết",
             "price": 57000,
             "discount": "50%",
@@ -129,7 +113,7 @@
             "type": "Foody"
         },
         {
-            "id": 16,
+            "id": 14,
             "name": "Tôm Chua Cay",
             "price": 60000,
             "discount": "50%",
@@ -137,23 +121,7 @@
             "type": "Foody"
         },
         {
-            "id": 17,
-            "name": "Lẩu Thái",
-            "price": 25000,
-            "discount": "50%",
-            "imageUrls": "https://cdn.tgdd.vn/Files/2019/07/26/1181815/lau-thai-hai-san-chua-chua-cay-cay-danh-bay-cai-lanh-202111161130260017.jpg",
-            "type": "Foody"
-        },
-        {
-            "id": 18,
-            "name": "Lẩu Bò",
-            "price": 80000,
-            "discount": "50%",
-            "imageUrls": "https://keyassets-p2.timeincuk.net/wp/prod/wp-content/uploads/sites/63/2010/09/Beef-hotpot-scaled.jpg",
-            "type": "Foody"
-        },
-        {
-            "id": 19,
+            "id": 15,
             "name": "Bạc Hà Đá Xay",
             "price": 53000,
             "discount": "50%",
@@ -161,7 +129,7 @@
             "type": "Drink"
         },
         {
-            "id": 20,
+            "id": 16,
             "name": "Caramel Đá Xay",
             "price": 57000,
             "discount": "50%",
@@ -169,7 +137,7 @@
             "type": "Drink"
         },
         {
-            "id": 21,
+            "id": 17,
             "name": "Táo Và Dâu Ép",
             "price": 48000,
             "discount": "50%",
@@ -177,7 +145,7 @@
             "type": "Drink"
         },
         {
-            "id": 22,
+            "id": 18,
             "name": "Bưởi Ép",
             "price": 38000,
             "discount": "50%",
@@ -185,7 +153,7 @@
             "type": "Drink"
         },
         {
-            "id": 23,
+            "id": 19,
             "name": "Dâu Ép",
             "price": 53000,
             "discount": "50%",
@@ -193,7 +161,7 @@
             "type": "Drink"
         },
         {
-            "id": 24,
+            "id": 20,
             "name": "Táo Ép",
             "price": 35000,
             "discount": "50%",
@@ -201,7 +169,7 @@
             "type": "Drink"
         },
         {
-            "id": 25,
+            "id": 21,
             "name": "Dứa Ép",
             "price": 38000,
             "discount": "50%",
@@ -209,7 +177,7 @@
             "type": "Drink"
         },
         {
-            "id": 26,
+            "id": 22,
             "name": "Cam Ép",
             "price": 41000,
             "discount": "50%",
@@ -217,23 +185,7 @@
             "type": "Drink"
         },
         {
-            "id": 27,
-            "name": "Sinh Tố Chuối Dâu",
-            "price": 49000,
-            "discount": "50%",
-            "imageUrls": "https://cdn.tgdd.vn/Files/2019/05/21/1168040/giam-can-hieu-qua-voi-sinh-to-chuoi-dau-tay-3_800x450.jpg",
-            "type": "Drink"
-        },
-        {
-            "id": 28,
-            "name": "Sinh Tố Xoài",
-            "price": 48000,
-            "discount": "50%",
-            "imageUrls": "https://www.bartender.edu.vn/wp-content/uploads/2020/04/sinh-to-xoai.jpg",
-            "type": "Drink"
-        },
-        {
-            "id": 29,
+            "id": 23,
             "name": "Sò Huyết Tứ Xuyên",
             "price": 80000,
             "discount": "12%",
@@ -241,7 +193,7 @@
             "type": "Appetizer"
         },
         {
-            "id": 30,
+            "id": 24,
             "name": "Sườn Kinh Đô",
             "price": 137000,
             "discount": "50%",
@@ -249,7 +201,7 @@
             "type": "Appetizer"
         },
         {
-            "id": 31,
+            "id": 25,
             "name": "Thịt Nguội Bát Bửu",
             "price": 92000,
             "discount": "50%",
@@ -257,7 +209,7 @@
             "type": "Appetizer"
         },
         {
-            "id": 32,
+            "id": 26,
             "name": "Càng Cua Bách Hoa",
             "price": 102000,
             "discount": "50%",
@@ -265,7 +217,7 @@
             "type": "Appetizer"
         },
         {
-            "id": 33,
+            "id": 27,
             "name": "Dồi Trường Hấp Gừng",
             "price": 76000,
             "discount": "50%",
@@ -273,7 +225,7 @@
             "type": "Appetizer"
         },
         {
-            "id": 34,
+            "id": 28,
             "name": "Mực chiên xù",
             "price": 83000,
             "discount": "50%",
@@ -281,7 +233,7 @@
             "type": "Appetizer"
         },
         {
-            "id": 35,
+            "id": 29,
             "name": "Bò lúc lắc",
             "price": 197000,
             "discount": "50%",
@@ -289,7 +241,7 @@
             "type": "Appetizer"
         },
         {
-            "id": 36,
+            "id": 30,
             "name": "Hoành Thánh Chiên",
             "price": 64000,
             "discount": "50%",
@@ -297,23 +249,7 @@
             "type": "Appetizer"
         },
         {
-            "id": 37,
-            "name": "Chạo Tôm",
-            "price": 73500,
-            "discount": "50%",
-            "imageUrls": "https://www.hoidaubepaau.com/wp-content/uploads/2019/08/chao-tom-boc-mia.jpg",
-            "type": "Appetizer"
-        },
-        {
-            "id": 38,
-            "name": "Nem Nướng",
-            "price": 39000,
-            "discount": "50%",
-            "imageUrls": "https://songkhoe.medplus.vn/wp-content/uploads/2020/02/C%C3%A1ch-l%C3%A0m-nem-n%C6%B0%E1%BB%9Bng-1.png",
-            "type": "Appetizer"
-        },
-        {
-            "id": 39,
+            "id": 31,
             "name": "Sương Sáo Mật Ong",
             "price": 48000,
             "discount": "50%",
@@ -321,7 +257,7 @@
             "type": "Dessert"
         },
         {
-            "id": 40,
+            "id": 32,
             "name": "Tào Phớ",
             "price": 43000,
             "discount": "50%",
@@ -329,7 +265,7 @@
             "type": "Dessert"
         },
         {
-            "id": 41,
+            "id": 33,
             "name": "Chè Bưởi",
             "price": 39000,
             "discount": "50%",
@@ -337,7 +273,7 @@
             "type": "Dessert"
         },
         {
-            "id": 42,
+            "id": 34,
             "name": "Bánh Đậu Đỏ Hấp",
             "price": 49000,
             "discount": "50%",
@@ -345,7 +281,7 @@
             "type": "Dessert"
         },
         {
-            "id": 43,
+            "id": 35,
             "name": "Bánh Đậu Xanh",
             "price": 35000,
             "discount": "50%",
@@ -353,7 +289,7 @@
             "type": "Dessert"
         },
         {
-            "id": 54,
+            "id": 36,
             "name": "Kem Que Ba Màu",
             "price": 27000,
             "discount": "50%",
@@ -361,7 +297,7 @@
             "type": "Dessert"
         },
         {
-            "id": 45,
+            "id": 37,
             "name": "Dâu Tây Đá Bào",
             "price": 48000,
             "discount": "50%",
@@ -369,27 +305,11 @@
             "type": "Dessert"
         },
         {
-            "id": 46,
+            "id": 38,
             "name": "Bánh Crepe Lá Dứa",
             "price": 49000,
             "discount": "50%",
             "imageUrls": "https://cdn.daylambanh.edu.vn/wp-content/uploads/2019/03/crepe-la-dua-600x400.jpg",
-            "type": "Dessert"
-        },
-        {
-            "id": 47,
-            "name": "Chè Bắp",
-            "price": 38000,
-            "discount": "50%",
-            "imageUrls": "https://cdn.dayphache.edu.vn/wp-content/uploads/2021/07/che-bap-dau-xanh.jpg",
-            "type": "Dessert"
-        },
-        {
-            "id": 48,
-            "name": "Thạch Sữa Trái Cây",
-            "price": 60000,
-            "discount": "50%",
-            "imageUrls": "https://mamcomviet.com/wp-content/uploads/2017/07/cach-lam-thach-trai-cay-uong-tra-sua-6.jpg",
             "type": "Dessert"
         }
     ]
