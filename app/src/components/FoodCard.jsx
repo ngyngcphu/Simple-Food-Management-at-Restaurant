@@ -1,8 +1,8 @@
-import { Component } from "react";
+import { PureComponent } from "react";
 import { Card } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
-// PORT=3001 react-scripts start
-class FoodCard extends Component {
+
+class FoodCard extends PureComponent {
     constructor(props) {
         super(props);
         this.state = {};
@@ -18,19 +18,17 @@ class FoodCard extends Component {
                     <Card.Title style={{ textAlign: 'center' }}>{name}</Card.Title>
                     <Card.Text style={{ width: '18rem', color: '#F63C3C', fontWeight: 'bold' }}>
                         {/* {
-                            (discount.length > 0 && discount[0] !== "0") ? <div class="text-primary text-start" >
-                                <p class="text-decoration-line-through text-secondary" style={{ marginLeft: '30%' }}>{Intl.NumberFormat().format(price) + " VNĐ"}</p>
+                            (discount.length > 0 && discount[0] !== "0") ? <div className="text-primary text-start" >
+                                <p className="text-decoration-line-through text-secondary" style={{ marginLeft: '30%' }}>{Intl.NumberFormat().format(price) + " VNĐ"}</p>
                                 <h4 style={{ marginLeft: '23%' }}>{Intl.NumberFormat().format(price * (1 - parseFloat(discount) / 100)) + " VNĐ"}</h4>
-                            </div> : <div class="text-primary text-start" >
-                                <p class="text-decoration-line-through text-secondary" style={{ marginLeft: '30%' }}>{Intl.NumberFormat().format(price) + " VNĐ"}</p>
+                            </div> : <div className="text-primary text-start" >
+                                <p className="text-decoration-line-through text-secondary" style={{ marginLeft: '30%' }}>{Intl.NumberFormat().format(price) + " VNĐ"}</p>
                                 <h4 style={{ marginLeft: '23%' }}>{Intl.NumberFormat().format(price * (1 - parseFloat(discount) / 100)) + " VNĐ"}</h4>
                             </div>
                         } */}
-                        <div class="text-primary text-start">
-                            <p class="text-danger fs-5" style={{ marginLeft: '25%' }}>{Intl.NumberFormat().format(price) + " VNĐ"}</p>
-                        </div>
+                        <span className="text-start text-danger fs-5" style={{ marginLeft: '25%' }}>{Intl.NumberFormat().format(price) + " VNĐ"}</span>
                     </Card.Text>
-                    <Button class="btn btn-light text-danger" variant="primary"
+                    <Button className="btn btn-light text-danger" variant="primary"
                         style={{ marginLeft: '15%', width: '183px', height: '52px', backgroundColor: '#ffffff', borderColor: '#BF0000', fontWeight: 'bold', color: '#BF0000' }}
                     >
                         Xem

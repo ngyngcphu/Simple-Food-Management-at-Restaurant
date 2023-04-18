@@ -1,7 +1,7 @@
-import { Component } from "react";
+import { PureComponent } from "react";
 import { Button } from 'react-bootstrap';
 
-class FoodType extends Component {
+class FoodType extends PureComponent {
     constructor(props) {
         super(props);
         this.state = {
