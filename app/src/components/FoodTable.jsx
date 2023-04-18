@@ -55,7 +55,7 @@ class FoodTable extends PureComponent {
                 <div style={{ backgroundColor: '#E9E9E9', width: '100%' }}>
                     {
                         this.state.foodData.map((data, index) => {
-                            return <FoodCard key={index} name={data.food_name} price={data.price} image={data.imageUrls[0]} />
+                            return <FoodCard key={index} name={data.food_name} price={data.price} image={data.imageUrls} />
                         })
                     }
                 </div>
