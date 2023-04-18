@@ -50,38 +50,6 @@
         },
         {
             "id": 6,
-            "name": "Combo Gà Sốt Kem",
-            "price": 82000,
-            "discount": "50%",
-            "imageUrls": "https://songkhoe.medplus.vn/wp-content/uploads/2020/03/uc-ga-sot-kem-meo-1.png",
-            "type": "Combo"
-        },
-        {
-            "id": 7,
-            "name": "Combo Cơm",
-            "price": 30000,
-            "discount": "50%",
-            "imageUrls": "https://assets.grab.com/wp-content/uploads/sites/11/2020/04/03164942/111.jpg",
-            "type": "Combo"
-        },
-        {
-            "id": 8,
-            "name": "Gà Chiên",
-            "price": 50000,
-            "discount": "20%",
-            "imageUrls": "https://ameovat.com/wp-content/uploads/2016/05/cach-lam-ga-ran.jpg",
-            "type": "Foody"
-        },
-        {
-            "id": 9,
-            "name": "Pizza",
-            "price": 137000,
-            "discount": "0%",
-            "imageUrls": "https://dayngusac.com/wp-content/uploads/2021/03/banh-pizza-bao-nhieu-calo-an-nhieu-pizza-nhieu-co-beo-khong.jpg",
-            "type": "Foody"
-        },
-        {
-            "id": 10,
             "name": "Mì Ý",
             "price": 98000,
             "discount": "50%",
@@ -89,7 +57,7 @@
             "type": "Foody"
         },
         {
-            "id": 11,
+            "id": 7,
             "name": "Cua Hầm Cay",
             "price": 351000,
             "discount": "50%",
@@ -97,7 +65,7 @@
             "type": "Foody"
         },
         {
-            "id": 12,
+            "id": 8,
             "name": "Rice noodle",
             "price": 57000,
             "discount": "50%",
@@ -105,7 +73,7 @@
             "type": "Foody"
         },
         {
-            "id": 13,
+            "id": 9,
             "name": "Bít Tết",
             "price": 57000,
             "discount": "50%",
@@ -113,7 +81,7 @@
             "type": "Foody"
         },
         {
-            "id": 14,
+            "id": 10,
             "name": "Tôm Chua Cay",
             "price": 60000,
             "discount": "50%",
@@ -121,23 +89,7 @@
             "type": "Foody"
         },
         {
-            "id": 15,
-            "name": "Bạc Hà Đá Xay",
-            "price": 53000,
-            "discount": "50%",
-            "imageUrls": "https://icy-blast.weebly.com/uploads/1/2/9/7/129791098/s251130356343575102_p35_i1_w440.jpeg",
-            "type": "Drink"
-        },
-        {
-            "id": 16,
-            "name": "Caramel Đá Xay",
-            "price": 57000,
-            "discount": "50%",
-            "imageUrls": "https://cdn.tgdd.vn/2021/05/CookProduct/1200-1200x676-71.jpg",
-            "type": "Drink"
-        },
-        {
-            "id": 17,
+            "id": 11,
             "name": "Táo Và Dâu Ép",
             "price": 48000,
             "discount": "50%",
@@ -145,7 +97,7 @@
             "type": "Drink"
         },
         {
-            "id": 18,
+            "id": 12,
             "name": "Bưởi Ép",
             "price": 38000,
             "discount": "50%",
@@ -153,7 +105,7 @@
             "type": "Drink"
         },
         {
-            "id": 19,
+            "id": 13,
             "name": "Dâu Ép",
             "price": 53000,
             "discount": "50%",
@@ -161,7 +113,7 @@
             "type": "Drink"
         },
         {
-            "id": 20,
+            "id": 14,
             "name": "Táo Ép",
             "price": 35000,
             "discount": "50%",
@@ -169,7 +121,7 @@
             "type": "Drink"
         },
         {
-            "id": 21,
+            "id": 15,
             "name": "Dứa Ép",
             "price": 38000,
             "discount": "50%",
@@ -177,7 +129,7 @@
             "type": "Drink"
         },
         {
-            "id": 22,
+            "id": 16,
             "name": "Cam Ép",
             "price": 41000,
             "discount": "50%",
@@ -185,20 +137,84 @@
             "type": "Drink"
         },
         {
-            "id": 23,
-            "name": "Sò Huyết Tứ Xuyên",
-            "price": 80000,
-            "discount": "12%",
-            "imageUrls": "http://giadinh.mediacdn.vn/2017/so-huyet-ngon-1499241121779.jpg",
+            "id": 17,
+            "name": "Thịt Nguội Bát Bửu",
+            "price": 92000,
+            "discount": "50%",
+            "imageUrls": "https://haithuycatering.com/image/5c22fbc451046d106a03ef10/original.jpg",
             "type": "Appetizer"
         },
         {
-            "id": 24,
-            "name": "Sườn Kinh Đô",
-            "price": 137000,
+            "id": 18,
+            "name": "Càng Cua Bách Hoa",
+            "price": 102000,
             "discount": "50%",
-            "imageUrls": "https://s.elib.vn/images/doc/2020/20201030//thumb/600x254/suon-kinh-do273.jpg",
+            "imageUrls": "https://monngonmoingay.com/wp-content/uploads/2015/08/IMG-4078-cang-cua-bach-hoa.png",
             "type": "Appetizer"
+        },
+        {
+            "id": 19,
+            "name": "Dồi Trường Hấp Gừng",
+            "price": 76000,
+            "discount": "50%",
+            "imageUrls": "https://monngonmoingay.com/wp-content/uploads/2015/08/IMG-2725-doi-truong-hap-hanh-gung.png",
+            "type": "Appetizer"
+        },
+        {
+            "id": 20,
+            "name": "Mực chiên xù",
+            "price": 83000,
+            "discount": "50%",
+            "imageUrls": "https://nghebep.com/wp-content/uploads/2017/12/muc-chien-xu.jpg",
+            "type": "Appetizer"
+        },
+        {
+            "id": 21,
+            "name": "Sương Sáo Mật Ong",
+            "price": 48000,
+            "discount": "50%",
+            "imageUrls": "https://xedaptapelip.com/wp-content/uploads/2022/03/%C4%83n-suong-sao-voi-mat-ong.jpg",
+            "type": "Dessert"
+        },
+        {
+            "id": 22,
+            "name": "Tào Phớ",
+            "price": 43000,
+            "discount": "50%",
+            "imageUrls": "https://thucthan.com/media/2019/07/tao-pho/tao-pho.jpg",
+            "type": "Dessert"
+        },
+        {
+            "id": 23,
+            "name": "Chè Bưởi",
+            "price": 39000,
+            "discount": "50%",
+            "imageUrls": "https://cdn.daynauan.info.vn/wp-content/uploads/2017/08/che-buoi-dau-xanh.jpg",
+            "type": "Dessert"
+        },
+        {
+            "id": 24,
+            "name": "Bánh Đậu Đỏ Hấp",
+            "price": 49000,
+            "discount": "50%",
+            "imageUrls": "https://cdn.tgdd.vn/2020/08/CookRecipe/Avatar/banh-bao-nhan-dau-do-chay-thumbnail.jpg",
+            "type": "Dessert"
+        },
+        {
+            "id": 25,
+            "name": "Bánh Đậu Xanh",
+            "price": 35000,
+            "discount": "50%",
+            "imageUrls": "https://thuonghieusanpham.vn/stores/news_dataimages/daiduong/092021/19/11/in_article/5538_135535-internet---b-nh---u-xanh-h-i-d--ng.jpg?rt=20210919115539",
+            "type": "Dessert"
+        },
+        {
+            "id": 26,
+            "name": "Kem Que Ba Màu",
+            "price": 27000,
+            "discount": "50%",
+            "imageUrls": "https://2sao.vietnamnetjsc.vn/images/2018/01/16/13/17/kem-ba-mau.jpg",
+            "type": "Dessert"
         }
     ]
 }
