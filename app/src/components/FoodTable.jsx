@@ -1,18 +1,25 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import { Button, Modal, Form } from "react-bootstrap";
 import FoodType from './FoodType';
 import FoodCard from './FoodCard';
-import MockData from './MockData';
+import { getFood } from "../services/food";
 
-class FoodTable extends Component {
+class FoodTable extends PureComponent {
     constructor(props) {
         super(props);
         this.state = {
+            foodData: [],
+
             showModal: false,
             newFoodName: "",
             newFoodPrice: "",
             newFoodImage: ""
         };
+    }
+
+     async componentDidMount() {
+        const { data } = await getFood();
+        this.setState({foodData: data})
     }
 
     handleShowModal = () => {
@@ -47,8 +54,8 @@ class FoodTable extends Component {
                 </Button>
                 <div style={{ backgroundColor: '#E9E9E9', width: '100%' }}>
                     {
-                        MockData.map((val) => {
-                            return <FoodCard name={val.food_name} price={val.price} image={val.img} />
+                        this.state.foodData.map((data, index) => {
+                            return <FoodCard key={index} name={data.food_name} price={data.price} image={data.imageUrls[0]} />
                         })
                     }
                 </div>
