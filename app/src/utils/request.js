@@ -1,6 +1,6 @@
 import axios from "axios";
 
 export const request = axios.create({
-  baseURL: "https://my-json-server.typicode.com/ngyngcphu/Simple-Food-Management-at-Restaurant"
+  baseURL: "https://zany-luxurious-rattlesnake.glitch.me"
   //baseURL: "http://localhost:3001"
 });
