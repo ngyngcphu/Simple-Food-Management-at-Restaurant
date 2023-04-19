@@ -1,6 +1,5 @@
 import React, { PureComponent } from "react";
 import { Button, Modal, Form } from "react-bootstrap";
-import FoodType from './FoodType';
 import FoodCard from './FoodCard';
 import { getFood } from "../services/food";
 
@@ -10,6 +9,9 @@ class FoodTable extends PureComponent {
         this.state = {
             foodData: [],
 
+            lists: ['Combo', 'Foody', 'Drink', 'Appetizer', 'Dessert'],
+            type: 'Combo',
+
             showModal: false,
             newFoodName: "",
             newFoodPrice: "",
@@ -17,9 +19,13 @@ class FoodTable extends PureComponent {
         };
     }
 
-     async componentDidMount() {
+    async componentDidMount() {
         const { data } = await getFood();
-        this.setState({foodData: data})
+        this.setState({ foodData: data })
+    }
+
+    classifyFood = (foodData) => {
+        return foodData.type === this.state.type;
     }
 
     handleShowModal = () => {
@@ -47,15 +53,31 @@ class FoodTable extends PureComponent {
         return (
             <div>
                 <div style={{ width: '100%' }}>
-                    <FoodType />
+                    <div style={{ backgroundColor: '#E9E9E9', height: '100px', width: '100%' }}
+                    >
+                        {this.state.lists.map((list, index) => (
+                            <Button key={index} className="btn btn-light"
+                                variant="primary" onClick={() => this.setState({ type: list })}
+                                style={this.state.type === list ? {
+                                    width: '150px', height: '52px', backgroundColor: '#ffffff',
+                                    borderColor: '#F63C3C', fontWeight: 'bold', color: '#F63C3C',
+                                    margin: '25px 25px 25px 67px', borderRadius: '50px', boxShadow: '1px 1px #F63C3C'
+                                } : {
+                                    width: '150px', height: '52px', backgroundColor: '#ffffff',
+                                    borderColor: '#ffffff', fontWeight: 'bold', color: '#000000', margin: '25px 25px 25px 67px', borderRadius: '12px'
+                                }}>
+                                {list}
+                            </Button>
+                        ))}
+                    </div>
                 </div>
                 <Button variant="primary" onClick={this.handleShowModal} style={{ margin: '20px' }}>
                     Add Food
                 </Button>
                 <div style={{ backgroundColor: '#E9E9E9', width: '100%' }}>
                     {
-                        this.state.foodData.map((data, index) => {
-                            return <FoodCard key={index} name={data.food_name} price={data.price} image={data.imageUrls} />
+                        this.state.foodData.filter(this.classifyFood).map((data, index) => {
+                            return <FoodCard key={index} name={data.name} price={data.price} image={data.imageUrls} discount={data.discount} />
                         })
                     }
                 </div>
@@ -68,29 +90,29 @@ class FoodTable extends PureComponent {
                             <Form.Group controlId="foodName">
                                 <Form.Label>Food Name</Form.Label>
                                 <Form.Control type="text" placeholder="Enter food name" name="newFoodName" value={this.state.newFoodName} onChange={this.handleInputChange} />
-                        </Form.Group>
-                        <Form.Group controlId="foodPrice">
-                            <Form.Label>Food Price</Form.Label>
-                            <Form.Control type="number" placeholder="Enter food price" name="newFoodPrice" value={this.state.newFoodPrice} onChange={this.handleInputChange} />
-                        </Form.Group>
-                        <Form.Group controlId="foodImage">
-                            <Form.Label>Food Image URL</Form.Label>
-                            <Form.Control type="text" placeholder="Enter food image URL" name="newFoodImage" value={this.state.newFoodImage} onChange={this.handleInputChange} />
-                        </Form.Group>
-                    </Form>
-                </Modal.Body>
-                <Modal.Footer>
-                    <Button variant="secondary" onClick={this.handleCloseModal}>
-                        Close
-                    </Button>
-                    <Button variant="primary" onClick={this.handleAddFood}>
-                        Add Food
-                    </Button>
-                </Modal.Footer>
-            </Modal>
-        </div>
-    );
-}
+                            </Form.Group>
+                            <Form.Group controlId="foodPrice">
+                                <Form.Label>Food Price</Form.Label>
+                                <Form.Control type="number" placeholder="Enter food price" name="newFoodPrice" value={this.state.newFoodPrice} onChange={this.handleInputChange} />
+                            </Form.Group>
+                            <Form.Group controlId="foodImage">
+                                <Form.Label>Food Image URL</Form.Label>
+                                <Form.Control type="text" placeholder="Enter food image URL" name="newFoodImage" value={this.state.newFoodImage} onChange={this.handleInputChange} />
+                            </Form.Group>
+                        </Form>
+                    </Modal.Body>
+                    <Modal.Footer>
+                        <Button variant="secondary" onClick={this.handleCloseModal}>
+                            Close
+                        </Button>
+                        <Button variant="primary" onClick={this.handleAddFood}>
+                            Add Food
+                        </Button>
+                    </Modal.Footer>
+                </Modal>
+            </div>
+        );
+    }
 }
 
 export default FoodTable;
