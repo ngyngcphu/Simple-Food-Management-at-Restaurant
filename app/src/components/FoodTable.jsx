@@ -1,6 +1,7 @@
 import React, { PureComponent } from "react";
 import { Button, Modal, Form } from "react-bootstrap";
 import FoodCard from './FoodCard';
+import Footer from "./Footer";
 import { getFood } from "../services/food";
 
 class FoodTable extends PureComponent {
@@ -110,6 +111,28 @@ class FoodTable extends PureComponent {
                         </Button>
                     </Modal.Footer>
                 </Modal>
+                <div style={{ backgroundColor: '#E9E9E9' }}>
+                    <div id="PaginationSearch" >
+                        <nav aria-label="Page navigation example">
+                            <ul className="pagination justify-content-center pagination-lg">
+                                <li className="page-item">
+                                    <button className="page-link text-primary" aria-label="Previous" /*onClick={() => ChangePage(pageNumber - 1)}*/ style={{ color: 'rgb(246, 60, 60)' }}>
+                                        <span aria-hidden="true">&laquo;</span>
+                                    </button>
+                                </li>
+                                {/* {
+                                Array.from({ length: Math.ceil(temp.length / 10) }, (_, i) => i + 1).map((index) => { return <li class="page-item"><button class="page-link text-primary" onClick={() => Page(index)} style={{ color: 'rgb(246, 60, 60)' }}>{index}</button></li> })
+                            } */}
+                                <li className="page-item">
+                                    <button className="page-link text-primary" aria-label="Next" /*onClick={() => ChangePage(pageNumber + 1)}*/ style={{ color: 'rgb(246, 60, 60)' }}>
+                                        <span aria-hidden="true">&raquo;</span>
+                                    </button>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <Footer />
             </div>
         );
     }
