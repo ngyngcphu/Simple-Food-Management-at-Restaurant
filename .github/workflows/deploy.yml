@@ -46,7 +46,7 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
           script: |
-            cd LTNC-server
+            cd LTNC-server/server
             docker compose up -d
       
       - name: Install and Build Frontend # This example project is built using npm and outputs the result to the 'build' folder. Replace with the commands required to build your project, or remove this step entirely if your site is pre-built.
