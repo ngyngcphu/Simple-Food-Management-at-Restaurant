@@ -28,13 +28,34 @@ jobs:
       - name: Checkout # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
         uses: actions/checkout@v3
 
-      - name: Install and Build # This example project is built using npm and outputs the result to the 'build' folder. Replace with the commands required to build your project, or remove this step entirely if your site is pre-built.
+      - name: Copy backend via SSH password
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.PORT }}
+          source: "./server/*"
+          target: "./LTNC-server"
+
+      - name: Deploy backend
+        uses: appleboy/ssh-action@v0.1.8
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.PORT }}
+          script: |
+            cd LTNC-server/server
+            docker compose up -d
+      
+      - name: Install and Build Frontend # This example project is built using npm and outputs the result to the 'build' folder. Replace with the commands required to build your project, or remove this step entirely if your site is pre-built.
         run: |
           cd app
           npm ci
           npm run build
 
-      - name: Deploy 
+      - name: Deploy frontend
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: app/build # The folder the action should deploy.
