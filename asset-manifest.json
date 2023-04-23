@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/Simple-Food-Management-at-Restaurant/static/css/main.a7528305.css",
-    "main.js": "/Simple-Food-Management-at-Restaurant/static/js/main.3c97e1fd.js",
+    "main.js": "/Simple-Food-Management-at-Restaurant/static/js/main.a213ae84.js",
     "static/js/787.c1112931.chunk.js": "/Simple-Food-Management-at-Restaurant/static/js/787.c1112931.chunk.js",
     "static/media/foodstore.png": "/Simple-Food-Management-at-Restaurant/static/media/foodstore.bf352a95eec6e4c733a4.png",
     "index.html": "/Simple-Food-Management-at-Restaurant/index.html",
     "main.a7528305.css.map": "/Simple-Food-Management-at-Restaurant/static/css/main.a7528305.css.map",
-    "main.3c97e1fd.js.map": "/Simple-Food-Management-at-Restaurant/static/js/main.3c97e1fd.js.map",
+    "main.a213ae84.js.map": "/Simple-Food-Management-at-Restaurant/static/js/main.a213ae84.js.map",
     "787.c1112931.chunk.js.map": "/Simple-Food-Management-at-Restaurant/static/js/787.c1112931.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a7528305.css",
-    "static/js/main.3c97e1fd.js"
+    "static/js/main.a213ae84.js"
   ]
 }
