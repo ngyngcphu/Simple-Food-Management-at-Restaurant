@@ -1,16 +1,24 @@
 import { PureComponent } from 'react';
 import './NavBar.css'
-import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import logo from '../../assets/foodstore.png';
+import SearchBar from './SearchBar';
+import { getFood } from "../../services/food";
 
 class NavBar extends PureComponent {
     constructor(props) {
         super(props);
-        this.state={};
+        this.state={
+            foodData: [],
+        };
+    }
+
+    async componentDidMount() {
+        const { data } = await getFood();
+        this.setState({ foodData: data });
     }
 
     render() {
@@ -30,13 +38,7 @@ class NavBar extends PureComponent {
                         >
                         </Nav>
                         <Form className="d-flex">
-                            <Form.Control
-                                type="search"
-                                placeholder="Search"
-                                className="me-2"
-                                aria-label="Search"
-                            />
-                            <Button variant="outline-success">Search</Button>
+                            <SearchBar placeholder="Search" data={this.state.foodData} />
                         </Form>
                     </Navbar.Collapse>
                 </Container>
