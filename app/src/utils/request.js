@@ -1,6 +1,6 @@
 import axios from "axios";
 
 export const request = axios.create({
-  baseURL: "https://tickflow.net",
-  //baseURL: "http://localhost:3001"
+  baseURL: "https://ltnc-server.tickflow.net",
+  //baseURL: "https://zany-luxurious-rattlesnake.glitch.me"
 });
