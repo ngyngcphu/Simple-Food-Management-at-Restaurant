@@ -11,7 +11,7 @@ class FoodTable extends PureComponent {
             foodData: [],
 
             lists: ["Combo", "Foody", "Drink", "Appetizer", "Dessert"],
-            type: "Combo",
+            type: "",
 
             showModal: false,
             newFoodName: "",
@@ -27,7 +27,7 @@ class FoodTable extends PureComponent {
     }
 
     classifyFood = (foodData) => {
-        return foodData.type === this.state.type;
+        return this.state.type === "" || foodData.type === this.state.type;
     };
 
     handleShowModal = () => {
@@ -138,7 +138,11 @@ class FoodTable extends PureComponent {
                                 key={index}
                                 className="btn btn-light"
                                 variant="primary"
-                                onClick={() => this.setState({ type: list })}
+                                onClick={() => {
+                                    if (this.state.type === list)
+                                        this.setState({ type: "" });
+                                    else this.setState({ type: list });
+                                }}
                                 style={
                                     this.state.type === list
                                         ? {
