@@ -145,7 +145,7 @@ class FoodTable extends PureComponent {
                             backgroundColor: "#E9E9E9",
                             height: "100px",
                             width: "100%",
-                            "justify-content": "space-between",
+                            "justifyContent": "space-between",
                         }}
                     >
                         {this.state.lists.map((list, index) => (
