@@ -61,60 +61,75 @@ class FoodTable extends PureComponent {
         this.setState({ [event.target.name]: event.target.value });
     };
 
+    sortNS = (a, b) => {
+        if (a.id > b.id) return 1;
+        if (a.id < b.id) return -1;
+        return 0;
+    };
+
+    sortNA = (a, b) => {
+        if (a.name > b.name) return 1;
+        if (a.name < b.name) return -1;
+        return 0;
+    };
+
+    sortND = (a, b) => {
+        if (a.name < b.name) return 1;
+        if (a.name > b.name) return -1;
+        return 0;
+    };
+
+    sortPA = (a, b) => {
+        if (
+            a.price * (1 - parseFloat(a.discount) / 100) >
+            b.price * (1 - parseFloat(b.discount) / 100)
+        )
+            return 1;
+        if (
+            a.price * (1 - parseFloat(a.discount) / 100) <
+            b.price * (1 - parseFloat(b.discount) / 100)
+        )
+            return -1;
+        return 0;
+    };
+
+    sortPD = (a, b) => {
+        if (
+            a.price * (1 - parseFloat(a.discount) / 100) <
+            b.price * (1 - parseFloat(b.discount) / 100)
+        )
+            return 1;
+        if (
+            a.price * (1 - parseFloat(a.discount) / 100) >
+            b.price * (1 - parseFloat(b.discount) / 100)
+        )
+            return -1;
+        return 0;
+    };
+
     handleFilter = (event) => {
         this.setState({ filterSelection: event.target.value });
         console.log(event.target.value);
-        var sortFunc = (a, b) => 0;
+        var sortFunc;
         switch (event.target.value) {
             case "na":
-                sortFunc = function (a, b) {
-                    if (a.name > b.name) return 1;
-                    if (a.name < b.name) return -1;
-                    return 0;
-                };
+                sortFunc = this.sortNA;
                 break;
 
             case "nd":
-                sortFunc = function (a, b) {
-                    if (a.name < b.name) return 1;
-                    if (a.name > b.name) return -1;
-                    return 0;
-                };
+                sortFunc = this.sortND;
                 break;
 
             case "pa":
-                sortFunc = function (a, b) {
-                    if (
-                        a.price * (1 - parseFloat(a.discount) / 100) >
-                        b.price * (1 - parseFloat(b.discount) / 100)
-                    )
-                        return 1;
-                    if (
-                        a.price * (1 - parseFloat(a.discount) / 100) <
-                        b.price * (1 - parseFloat(b.discount) / 100)
-                    )
-                        return -1;
-                    return 0;
-                };
+                sortFunc = this.sortPA;
                 break;
 
             case "pd":
-                sortFunc = function (a, b) {
-                    if (
-                        a.price * (1 - parseFloat(a.discount) / 100) <
-                        b.price * (1 - parseFloat(b.discount) / 100)
-                    )
-                        return 1;
-                    if (
-                        a.price * (1 - parseFloat(a.discount) / 100) >
-                        b.price * (1 - parseFloat(b.discount) / 100)
-                    )
-                        return -1;
-                    return 0;
-                };
+                sortFunc = this.sortPD;
                 break;
 
             default:
+                sortFunc = this.sortNS;
                 break;
         }
         this.state.foodData.sort(sortFunc);
