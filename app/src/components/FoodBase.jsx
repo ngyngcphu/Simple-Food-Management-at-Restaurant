@@ -21,7 +21,6 @@ export default class FoodBase extends Component {
     }
 
     handleFoodDataUpdate = (newData) => {
-        console.log('hey there');
         this.setState({ searchData: newData });
     }
 

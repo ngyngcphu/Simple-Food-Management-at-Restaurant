@@ -42,7 +42,7 @@ class NavBar extends PureComponent {
                         >
                         </Nav>
                         <Form className="d-flex">
-                            <SearchBar data={this.state.foodData} handleUpdateFoodData={this.handleUpdateFoodData} />
+                            <SearchBar data={this.state.foodData} placeholder={"Enter food name"} handleUpdateFoodData={this.handleUpdateFoodData} />
                         </Form>
                     </Navbar.Collapse>
                 </Container>

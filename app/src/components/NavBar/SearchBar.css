@@ -2,6 +2,9 @@
   display: flex;
   justify-content: center; /* centers horizontally */
   align-items: center; /* centers vertically */
+  border: 1px solid #ccc;
+  padding: 2px;
+  border-radius: 5px;
 }
 
 .search input {
