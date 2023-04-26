@@ -1,11 +1,11 @@
-import FoodTable from './components/FoodTable';
-import NavBar from './components/NavBar/NavBar';
+//import FoodTable from './components/FoodTable';
+import FoodData from './components/FoodTable'
 
 function App() {
   return (
     <>
-      <NavBar />
-      <FoodTable />
+      <FoodData />
+      
     </>
   );
 }
