@@ -1,18 +1,16 @@
-import React, { PureComponent } from "react";
+import React, { PureComponent} from "react";
 import { Button, Modal, Form, Row } from "react-bootstrap";
 import FoodCard from "./FoodCard";
 import Footer from "./Footer";
-import { getFood } from "../services/food";
 
-class FoodTable extends PureComponent {
+export class FoodTable extends PureComponent {
+
     constructor(props) {
         super(props);
         this.state = {
-            foodData: [],
-
+            foodData: props.foodData,
             lists: ["Combo", "Foody", "Drink", "Appetizer", "Dessert"],
             type: "",
-
             showModal: false,
             newFoodName: "",
             newFoodPrice: "",
@@ -21,9 +19,10 @@ class FoodTable extends PureComponent {
         };
     }
 
-    async componentDidMount() {
-        const { data } = await getFood();
-        this.setState({ foodData: data });
+    async componentDidUpdate(prevProps) {
+        if (prevProps.foodData !== this.props.foodData) {
+            this.setState({ foodData: this.props.foodData });
+        }
     }
 
     classifyFood = (foodData) => {
@@ -161,26 +160,26 @@ class FoodTable extends PureComponent {
                                 style={
                                     this.state.type === list
                                         ? {
-                                              width: "100px",
-                                              height: "52px",
-                                              backgroundColor: "#ffffff",
-                                              borderColor: "#F63C3C",
-                                              fontWeight: "bold",
-                                              color: "#F63C3C",
-                                              margin: "25px 25px 25px 25px",
-                                              borderRadius: "50px",
-                                              boxShadow: "1px 1px #F63C3C",
-                                          }
+                                            width: "100px",
+                                            height: "52px",
+                                            backgroundColor: "#ffffff",
+                                            borderColor: "#F63C3C",
+                                            fontWeight: "bold",
+                                            color: "#F63C3C",
+                                            margin: "25px 25px 25px 25px",
+                                            borderRadius: "50px",
+                                            boxShadow: "1px 1px #F63C3C",
+                                        }
                                         : {
-                                              width: "100px",
-                                              height: "52px",
-                                              backgroundColor: "#ffffff",
-                                              borderColor: "#ffffff",
-                                              fontWeight: "bold",
-                                              color: "#000000",
-                                              margin: "25px 25px 25px 25px",
-                                              borderRadius: "12px",
-                                          }
+                                            width: "100px",
+                                            height: "52px",
+                                            backgroundColor: "#ffffff",
+                                            borderColor: "#ffffff",
+                                            fontWeight: "bold",
+                                            color: "#000000",
+                                            margin: "25px 25px 25px 25px",
+                                            borderRadius: "12px",
+                                        }
                                 }
                             >
                                 {list}
