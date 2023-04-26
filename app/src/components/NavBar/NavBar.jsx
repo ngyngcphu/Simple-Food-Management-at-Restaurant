@@ -5,13 +5,13 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import logo from '../../assets/foodstore.png';
-import {SearchBar} from './SearchBar';
+import { SearchBar } from './SearchBar';
 import { getFood } from "../../services/food";
 
 class NavBar extends PureComponent {
     constructor(props) {
         super(props);
-        this.state={
+        this.state = {
             foodData: props.foodData,
         };
     }
@@ -24,8 +24,6 @@ class NavBar extends PureComponent {
     handleUpdateFoodData = (newData) => {
         this.props.updateFoodData(newData);
     }
-
-    
 
     render() {
         return (
@@ -44,7 +42,7 @@ class NavBar extends PureComponent {
                         >
                         </Nav>
                         <Form className="d-flex">
-                            <SearchBar data={this.state.foodData} updateFoodDatas={this.props.updateFoodData} />
+                            <SearchBar data={this.state.foodData} handleUpdateFoodData={this.handleUpdateFoodData} />
                         </Form>
                     </Navbar.Collapse>
                 </Container>

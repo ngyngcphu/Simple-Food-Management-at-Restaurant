@@ -1,42 +1,7 @@
-import React, { PureComponent, Component } from "react";
+import React, { PureComponent} from "react";
 import { Button, Modal, Form, Row } from "react-bootstrap";
 import FoodCard from "./FoodCard";
 import Footer from "./Footer";
-import { getFood } from "../services/food";
-import NavBar from "./NavBar/NavBar";
-
-export class FoodData extends Component {
-    static defaultProps = {
-        searchData: []
-    }
-
-    constructor(props) {
-        super(props);
-        this.state = {
-            searchData: props.searchData
-        }
-    }
-
-    async componentDidMount() {
-        const data = await getFood();
-        this.setState({ searchData: data.data });
-    }
-
-    render() {
-        const { searchData } = this.state;
-
-        return (
-            <div>
-                <NavBar foodData={searchData} updateFoodData={this.handleFoodDataUpdate} />
-                <FoodTable foodData={searchData} />
-            </div>
-        );
-    }
-
-    handleFoodDataUpdate = (newData) => {
-        this.setState({ foodData: newData });
-    }
-}
 
 export class FoodTable extends PureComponent {
 
@@ -411,4 +376,4 @@ export class FoodTable extends PureComponent {
     }
 }
 
-export default FoodData;
+export default FoodTable;
