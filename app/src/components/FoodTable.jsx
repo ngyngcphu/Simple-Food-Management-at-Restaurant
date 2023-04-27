@@ -14,7 +14,10 @@ export class FoodTable extends PureComponent {
             showModal: false,
             newFoodName: "",
             newFoodPrice: "",
-            newFoodImage: "",
+            newFoodDiscount: "",
+            newFoodImageUrl: "",
+            newFoodType: "",
+            newFoodDescription: "",
             filterSelection: "ns",
         };
     }
@@ -34,32 +37,55 @@ export class FoodTable extends PureComponent {
     };
 
     handleCloseModal = () => {
-        this.setState({ showModal: false });
-    };
-
-    handleAddFood = () => {
-        // Add new food to the menu
-        const { newFoodName, newFoodPrice, newFoodImage } = this.state;
-        // You can implement your logic here to add the new food to your menu
-        console.log(
-            "New food added: ",
-            newFoodName,
-            newFoodPrice,
-            newFoodImage
-        );
-        // Close the modal and reset the input values
         this.setState({
+          showModal: false,
+          newFoodName: "",
+          newFoodPrice: "",
+          newFoodDiscount: "",
+          newFoodImageUrl: "",
+          newFoodType: "",
+          newFoodDescription: "",
+        });
+      };
+
+      handleAddFood = async () => {
+        // Add new food to the menu
+        const newFood = {
+          name: this.state.newFoodName,
+          price: parseFloat(this.state.newFoodPrice),
+          discount: parseFloat(this.state.newFoodDiscount),
+          imageUrls: this.state.newFoodImageUrl,
+          type: this.state.newFoodType,
+          description: this.state.newFoodDescription,
+        };
+    
+        
+    
+          const updatedFoodData = [...this.state.foodData, newFood];
+          this.setState({
+            foodData: updatedFoodData,
             showModal: false,
             newFoodName: "",
             newFoodPrice: "",
-            newFoodImage: "",
-        });
-    };
-
+            newFoodDiscount: "",
+            newFoodImageUrl: "",
+            newFoodType: "",
+            newFoodDescription: "",
+          });
+        } ;
+      
+    
+      
+      
+      
     handleInputChange = (event) => {
         this.setState({ [event.target.name]: event.target.value });
     };
-
+    handleFilterSelection = (event) => {
+        const filterOption = event.target.value;
+        this.setState({ type: filterOption });
+      };
+      
     sortNS = (a, b) => {
         if (a.id > b.id) return 1;
         if (a.id < b.id) return -1;
@@ -136,7 +162,9 @@ export class FoodTable extends PureComponent {
     };
 
     render() {
-        return (
+       
+
+   return (
             <div>
                 <div style={{ width: "100%" }}>
                     <Row
@@ -292,39 +320,77 @@ export class FoodTable extends PureComponent {
                         <Modal.Title>Add Food</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                        <Form>
-                            <Form.Group controlId="foodName">
-                                <Form.Label>Food Name</Form.Label>
-                                <Form.Control
-                                    type="text"
-                                    placeholder="Enter food name"
-                                    name="newFoodName"
-                                    value={this.state.newFoodName}
-                                    onChange={this.handleInputChange}
-                                />
-                            </Form.Group>
-                            <Form.Group controlId="foodPrice">
-                                <Form.Label>Food Price</Form.Label>
-                                <Form.Control
-                                    type="number"
-                                    placeholder="Enter food price"
-                                    name="newFoodPrice"
-                                    value={this.state.newFoodPrice}
-                                    onChange={this.handleInputChange}
-                                />
-                            </Form.Group>
-                            <Form.Group controlId="foodImage">
-                                <Form.Label>Food Image URL</Form.Label>
-                                <Form.Control
-                                    type="text"
-                                    placeholder="Enter food image URL"
-                                    name="newFoodImage"
-                                    value={this.state.newFoodImage}
-                                    onChange={this.handleInputChange}
-                                />
-                            </Form.Group>
-                        </Form>
-                    </Modal.Body>
+    <Form>
+        <Form.Group controlId="foodName">
+            <Form.Label>Food Name</Form.Label>
+            <Form.Control
+                type="text"
+                placeholder="Enter food name"
+                name="newFoodName"
+                value={this.state.newFoodName}
+                onChange={this.handleInputChange}
+            />
+        </Form.Group>
+        <Form.Group controlId="foodPrice">
+            <Form.Label>Food Price</Form.Label>
+            <Form.Control
+                type="number"
+                placeholder="Enter food price"
+                name="newFoodPrice"
+                value={this.state.newFoodPrice}
+                onChange={this.handleInputChange}
+            />
+        </Form.Group>
+        <Form.Group controlId="foodDiscount">
+            <Form.Label>Food Discount</Form.Label>
+            <Form.Control
+                type="number"
+                placeholder="Enter food discount"
+                name="newFoodDiscount"
+                value={this.state.newFoodDiscount}
+                onChange={this.handleInputChange}
+            />
+        </Form.Group>
+        <Form.Group controlId="foodImage">
+            <Form.Label>Food Image URL</Form.Label>
+            <Form.Control
+                type="text"
+                placeholder="Enter food image URL"
+                name="newFoodImageUrl"
+                value={this.state.newFoodImageUrl}
+                onChange={this.handleInputChange}
+            />
+        </Form.Group>
+        <Form.Group controlId="foodType">
+  <Form.Label>Food Type</Form.Label>
+  <Form.Control
+    as="select"
+    name="type"
+    value={this.state.type}
+    onChange={this.handleFilterSelection}
+  >
+    <option value="">All</option>
+    <option value="Combo">Combo</option>
+    <option value="Foody">Foody</option>
+    <option value="Drink">Drink</option>
+    <option value="Appetizer">Appetizer</option>
+    <option value="Dessert">Dessert</option>
+  </Form.Control>
+</Form.Group>
+
+        <Form.Group controlId="foodDescription">
+            <Form.Label>Food Description</Form.Label>
+            <Form.Control
+                as="textarea"
+                placeholder="Enter food description"
+                name="newFoodDescription"
+                value={this.state.newFoodDescription}
+                onChange={this.handleInputChange}
+            />
+        </Form.Group>
+    </Form>
+</Modal.Body>
+
                     <Modal.Footer>
                         <Button
                             variant="secondary"
