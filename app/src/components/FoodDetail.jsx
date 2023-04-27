@@ -18,14 +18,14 @@ export default class FoodDetail extends PureComponent {
                 </Button>
                 <Modal size="xl" show={this.state.show} onHide={() => this.setState({ show: false })}>
                     <Modal.Header closeButton>
-                        <Modal.Title>Modal heading</Modal.Title>
+                        <Modal.Title>Thông tin món ăn</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
                         <div className="container p-4">
                             <div className="row">
                                 <div className="col-md-6 col-lg-5">
                                     <div className="row p-0">
-                                        <img className="w-100 mainImg" src={this.props.imageUrls} alt="foodImage" />
+                                        <img className="w-100" style={{ height: '400px' }} src={this.props.imageUrls} alt="foodImage" />
                                     </div>
                                 </div>
                                 <div className="col-md-6">
