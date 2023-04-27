@@ -1,17 +1,67 @@
 import { PureComponent } from "react";
 import { Button, Modal } from "react-bootstrap";
+import DetailModal from "./DetailModal";
+import { putFood, deleteFood } from "../services/food";
 
 export default class FoodDetail extends PureComponent {
     constructor(props) {
         super(props);
-        this.state = { show: false }
+        this.state = {
+            show: false,
+            showEditModal: false,
+            edittingId: null,
+        }
     }
+
+    showEditModal = (id) => {
+        this.setState({ edittingId: id, showEditModal: true });
+    };
+
+    closeEditModal = () => {
+        this.setState({ showEditModal: false });
+    };
+
+    saveEditModal = async (id, editFood) => {
+        try {
+            const response = await putFood(id, editFood);
+            console.log(response.data);
+            const updatedFoodData = [...this.props.foodData];
+            const index = updatedFoodData.findIndex((food) => food.id === id);
+            updatedFoodData[index] = response.data;
+            this.setState({ foodData: updatedFoodData, showEditModal: false });
+        } catch (error) {
+            console.error(error);
+        }
+    };
+    deleteEditModal = async (id) => {
+        try {
+            const response = await deleteFood(id);
+            console.log(response.data);
+            this.setState({
+                foodData: this.props.foodData.filter((food) => food.id !== id),
+                showEditModal: false,
+            });
+        } catch (error) {
+            console.error(error);
+        }
+    };
+
 
     render() {
         return (
             <div>
-                <Button className="btn btn-light text-danger" variant="primary"
-                    style={{ marginLeft: '15%', width: '183px', height: '52px', backgroundColor: '#ffffff', borderColor: '#BF0000', fontWeight: 'bold', color: '#BF0000' }}
+                <Button
+                    className="btn btn-light text-danger"
+                    variant="primary"
+                    style={{
+                        marginLeft: '15%',
+                        width: '183px',
+                        height: '52px',
+                        backgroundColor: '#ffffff',
+                        borderColor: '#BF0000',
+                        fontWeight: 'bold',
+                        color: '#BF0000'
+                    }}
                     onClick={() => this.setState({ show: true })}
                 >
                     Xem
@@ -30,10 +80,6 @@ export default class FoodDetail extends PureComponent {
                                 </div>
                                 <div className="col-md-6">
                                     <div className="container">
-                                        {/* {JSON.parse(localStorage.getItem("isAuthenticated")) ?
-                                            <FoodEditor mode="edit" id={FOOD_ID} />
-                                            : ""
-                                        } */}
                                         <div className="row text-start">
                                             <h1>{this.props.name}</h1>
                                         </div>
@@ -49,16 +95,6 @@ export default class FoodDetail extends PureComponent {
                                             <h3>Thông tin chi tiết:</h3>
                                             <p>{this.props.description}</p>
                                         </div>
-                                        {/* <OrderOptionModal
-                                            food={food}
-                                            setFood={setFood}
-                                            quantity={quantity}
-                                            additionalPrice={additionalPrice}
-                                            setAdditionalPrice={setAdditionalPrice}
-                                            totalPrice={totalPrice}
-                                            setTotalPrice={setTotalPrice}
-                                            onSubmit={onSubmit}
-                                        /> */}
                                     </div>
                                 </div>
                             </div>
@@ -69,11 +105,21 @@ export default class FoodDetail extends PureComponent {
                         <Button variant="secondary" onClick={() => this.setState({ show: false })}>
                             Close
                         </Button>
-                        <Button variant="primary" onClick={() => this.setState({ show: false })}>
-                            Save Changes
+                        <Button variant="primary" onClick={() => this.showEditModal(this.props.id)}>
+                            Edit
                         </Button>
                     </Modal.Footer>
                 </Modal>
+                <DetailModal
+                    show={this.state.showEditModal}
+                    handleClose={this.closeEditModal}
+                    food={
+                        this.props.foodData.find((x) => x.id === this.state.edittingId) ??
+                        {}
+                    }
+                    handleSaveChanges={this.saveEditModal}
+                    handleDelete={this.deleteEditModal}
+                />
             </div>
         );
     }

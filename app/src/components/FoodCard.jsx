@@ -9,11 +9,19 @@ class FoodCard extends PureComponent {
     }
 
     render() {
-        const { name, price, image, discount, description } = this.props;
+        const { id, name, price, image, discount, description, foodData } = this.props;
 
         return (
             <div>
-                <Card style={{ width: '18rem', display: 'inline-block', marginTop: '3%', marginBottom: '4%', marginLeft: '6px', marginRight: '5px' }}>
+                <Card 
+                    style={{ 
+                        width: '18rem', 
+                        display: 'inline-block', 
+                        marginTop: '3%', 
+                        marginBottom: '4%', 
+                        marginLeft: '6px', 
+                        marginRight: '5px' 
+                    }}>
                     <Card.Img variant="top" src={image} />
                     <Card.Body>
                         <Card.Title style={{ textAlign: 'center' }}>{name}</Card.Title>
@@ -26,7 +34,15 @@ class FoodCard extends PureComponent {
                                 </span>
                             }
                         </Card.Text>
-                        <FoodDetail name={name} price={price} discount={discount} imageUrls={image} description={description} />
+                        <FoodDetail 
+                            id={id}
+                            name={name} 
+                            price={price} 
+                            discount={discount} 
+                            imageUrls={image} 
+                            description={description} 
+                            foodData={foodData}
+                        />
                     </Card.Body>
                 </Card>
             </div>
