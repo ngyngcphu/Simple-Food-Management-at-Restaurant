@@ -70,12 +70,13 @@ export class SearchBar extends Component {
                         {filteredData.slice(0, 15).map((value, key) => {
                             return (
                                 <a
+                                    key={key}
                                     className="dataItem"
                                     href={value.link}
                                     target="_blank"
                                     rel="noreferrer"
                                 >
-                                    <p>{value.name} </p>
+                                    <p>{value.name}</p>
                                 </a>
                             );
                         })}

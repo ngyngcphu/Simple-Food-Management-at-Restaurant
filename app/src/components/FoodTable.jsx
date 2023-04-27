@@ -1,4 +1,4 @@
-import React, { PureComponent} from "react";
+import React, { PureComponent } from "react";
 import { Button, Modal, Form, Row } from "react-bootstrap";
 import FoodCard from "./FoodCard";
 import Footer from "./Footer";
@@ -280,6 +280,7 @@ export class FoodTable extends PureComponent {
                                     price={data.price}
                                     image={data.imageUrls}
                                     discount={data.discount}
+                                    description={data.description}
                                 />
                             );
                         })}
