@@ -318,6 +318,7 @@ export class FoodTable extends PureComponent {
                             return (
                                 <FoodCard
                                     key={index}
+                                    id={data.id}
                                     name={data.name}
                                     price={data.price}
                                     image={data.imageUrls}
