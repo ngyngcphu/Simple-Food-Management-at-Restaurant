@@ -2,7 +2,7 @@ import React, { PureComponent} from "react";
 import { Button, Modal, Form, Row } from "react-bootstrap";
 import FoodCard from "./FoodCard";
 import Footer from "./Footer";
-
+import { request } from "../utils/request";
 export class FoodTable extends PureComponent {
 
     constructor(props) {
@@ -49,7 +49,7 @@ export class FoodTable extends PureComponent {
       };
 
       handleAddFood = async () => {
-        // Add new food to the menu
+        // Create a new food item object
         const newFood = {
           name: this.state.newFoodName,
           price: parseFloat(this.state.newFoodPrice),
@@ -58,10 +58,13 @@ export class FoodTable extends PureComponent {
           type: this.state.newFoodType,
           description: this.state.newFoodDescription,
         };
-    
-        
-    
-          const updatedFoodData = [...this.state.foodData, newFood];
+      
+        try {
+          // Send a POST request to the server to add the new food item
+          const response = await request.post('/food', newFood);
+      
+          // If the request is successful, update the state with the new food item
+          const updatedFoodData = [...this.state.foodData, response.data];
           this.setState({
             foodData: updatedFoodData,
             showModal: false,
@@ -72,9 +75,12 @@ export class FoodTable extends PureComponent {
             newFoodType: "",
             newFoodDescription: "",
           });
-        } ;
+        } catch (error) {
+          // Handle errors if any
+          console.log(error);
+        }
+      };
       
-    
       
       
       
@@ -82,9 +88,16 @@ export class FoodTable extends PureComponent {
         this.setState({ [event.target.name]: event.target.value });
     };
     handleFilterSelection = (event) => {
-        const filterOption = event.target.value;
-        this.setState({ type: filterOption });
+        const target = event.target;
+        const value = target.value;
+        const name = target.name;
+      
+        this.setState({
+          [name]: value,
+          newFoodType: value // Update the newFoodType property with the selected value
+        });
       };
+      
       
     sortNS = (a, b) => {
         if (a.id > b.id) return 1;
