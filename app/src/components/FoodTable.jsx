@@ -54,7 +54,7 @@ export class FoodTable extends PureComponent {
         const newFood = {
           name: this.state.newFoodName,
           price: parseFloat(this.state.newFoodPrice),
-          discount: parseFloat(this.state.newFoodDiscount),
+          discount: this.state.newFoodDiscount,
           imageUrls: this.state.newFoodImageUrl,
           type: this.state.newFoodType,
           description: this.state.newFoodDescription,
@@ -361,7 +361,7 @@ export class FoodTable extends PureComponent {
         <Form.Group controlId="foodDiscount">
             <Form.Label>Food Discount</Form.Label>
             <Form.Control
-                type="number"
+                type="text"
                 placeholder="Enter food discount"
                 name="newFoodDiscount"
                 value={this.state.newFoodDiscount}
