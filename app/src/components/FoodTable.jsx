@@ -18,6 +18,7 @@ export class FoodTable extends PureComponent {
             newFoodImageUrl: "",
             newFoodType: "",
             newFoodDescription: "",
+            newFoodImage: "",
             filterSelection: "ns",
         };
     }
@@ -321,6 +322,8 @@ export class FoodTable extends PureComponent {
                                     price={data.price}
                                     image={data.imageUrls}
                                     discount={data.discount}
+                                    description={data.description}
+                                        foodData={this.state.foodData}
                                 />
                             );
                         })}
