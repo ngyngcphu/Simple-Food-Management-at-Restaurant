@@ -11,3 +11,6 @@ export const putFood = (id, editFood) => {
 export const deleteFood = (id) => {
   return request.delete(`/food/${id}`);
 };
+export const addFood = (newFood) => {
+  return request.post("/food", newFood);
+};

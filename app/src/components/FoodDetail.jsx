@@ -114,8 +114,8 @@ export default class FoodDetail extends PureComponent {
                     show={this.state.showEditModal}
                     handleClose={this.closeEditModal}
                     food={
-                        this.props.foodData.find((x) => x.id === this.state.edittingId) ??
-                        {}
+                        this.props.foodData?.find((x) => x.id === this.state.edittingId) ?? {}
+
                     }
                     handleSaveChanges={this.saveEditModal}
                     handleDelete={this.deleteEditModal}
