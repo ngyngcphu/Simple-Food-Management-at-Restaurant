@@ -13,14 +13,14 @@ class FoodCard extends PureComponent {
 
         return (
             <div>
-                <Card 
-                    style={{ 
-                        width: '18rem', 
-                        display: 'inline-block', 
-                        marginTop: '3%', 
-                        marginBottom: '4%', 
-                        marginLeft: '6px', 
-                        marginRight: '5px' 
+                <Card
+                    style={{
+                        width: '18rem',
+                        display: 'inline-block',
+                        marginTop: '3%',
+                        marginBottom: '4%',
+                        marginLeft: '6px',
+                        marginRight: '5px'
                     }}>
                     <Card.Img variant="top" src={image} />
                     <Card.Body>
@@ -34,13 +34,13 @@ class FoodCard extends PureComponent {
                                 </span>
                             }
                         </Card.Text>
-                        <FoodDetail 
+                        <FoodDetail
                             id={id}
-                            name={name} 
-                            price={price} 
-                            discount={discount} 
-                            imageUrls={image} 
-                            description={description} 
+                            name={name}
+                            price={price}
+                            discount={discount}
+                            imageUrls={image}
+                            description={description}
                             foodData={foodData}
                         />
                     </Card.Body>

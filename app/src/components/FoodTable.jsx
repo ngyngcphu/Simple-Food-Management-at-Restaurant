@@ -1,8 +1,9 @@
-import React, { PureComponent} from "react";
+import React, { PureComponent } from "react";
 import { Button, Modal, Form, Row } from "react-bootstrap";
 import FoodCard from "./FoodCard";
 import Footer from "./Footer";
 import { request } from "../utils/request";
+import { sortNA, sortND, sortNS, sortPA, sortPD } from "../services/sort";
 export class FoodTable extends PureComponent {
 
     constructor(props) {
@@ -39,35 +40,6 @@ export class FoodTable extends PureComponent {
 
     handleCloseModal = () => {
         this.setState({
-          showModal: false,
-          newFoodName: "",
-          newFoodPrice: "",
-          newFoodDiscount: "",
-          newFoodImageUrl: "",
-          newFoodType: "",
-          newFoodDescription: "",
-        });
-      };
-
-      handleAddFood = async () => {
-        // Create a new food item object
-        const newFood = {
-          name: this.state.newFoodName,
-          price: parseFloat(this.state.newFoodPrice),
-          discount: this.state.newFoodDiscount,
-          imageUrls: this.state.newFoodImageUrl,
-          type: this.state.newFoodType,
-          description: this.state.newFoodDescription,
-        };
-      
-        try {
-          // Send a POST request to the server to add the new food item
-          const response = await request.post('/food', newFood);
-      
-          // If the request is successful, update the state with the new food item
-          const updatedFoodData = [...this.state.foodData, response.data];
-          this.setState({
-            foodData: updatedFoodData,
             showModal: false,
             newFoodName: "",
             newFoodPrice: "",
@@ -75,16 +47,42 @@ export class FoodTable extends PureComponent {
             newFoodImageUrl: "",
             newFoodType: "",
             newFoodDescription: "",
-          });
+        });
+    };
+
+    handleAddFood = async () => {
+        // Create a new food item object
+        const newFood = {
+            name: this.state.newFoodName,
+            price: parseFloat(this.state.newFoodPrice),
+            discount: this.state.newFoodDiscount,
+            imageUrls: this.state.newFoodImageUrl,
+            type: this.state.newFoodType,
+            description: this.state.newFoodDescription,
+        };
+
+        try {
+            // Send a POST request to the server to add the new food item
+            const response = await request.post('/food', newFood);
+
+            // If the request is successful, update the state with the new food item
+            const updatedFoodData = [...this.state.foodData, response.data];
+            this.setState({
+                foodData: updatedFoodData,
+                showModal: false,
+                newFoodName: "",
+                newFoodPrice: "",
+                newFoodDiscount: "",
+                newFoodImageUrl: "",
+                newFoodType: "",
+                newFoodDescription: "",
+            });
         } catch (error) {
-          // Handle errors if any
-          console.log(error);
+            // Handle errors if any
+            console.log(error);
         }
-      };
-      
-      
-      
-      
+    };
+
     handleInputChange = (event) => {
         this.setState({ [event.target.name]: event.target.value });
     };
@@ -92,58 +90,11 @@ export class FoodTable extends PureComponent {
         const target = event.target;
         const value = target.value;
         const name = target.name;
-      
+
         this.setState({
-          [name]: value,
-          newFoodType: value // Update the newFoodType property with the selected value
+            [name]: value,
+            newFoodType: value // Update the newFoodType property with the selected value
         });
-      };
-      
-      
-    sortNS = (a, b) => {
-        if (a.id > b.id) return 1;
-        if (a.id < b.id) return -1;
-        return 0;
-    };
-
-    sortNA = (a, b) => {
-        if (a.name > b.name) return 1;
-        if (a.name < b.name) return -1;
-        return 0;
-    };
-
-    sortND = (a, b) => {
-        if (a.name < b.name) return 1;
-        if (a.name > b.name) return -1;
-        return 0;
-    };
-
-    sortPA = (a, b) => {
-        if (
-            a.price * (1 - parseFloat(a.discount) / 100) >
-            b.price * (1 - parseFloat(b.discount) / 100)
-        )
-            return 1;
-        if (
-            a.price * (1 - parseFloat(a.discount) / 100) <
-            b.price * (1 - parseFloat(b.discount) / 100)
-        )
-            return -1;
-        return 0;
-    };
-
-    sortPD = (a, b) => {
-        if (
-            a.price * (1 - parseFloat(a.discount) / 100) <
-            b.price * (1 - parseFloat(b.discount) / 100)
-        )
-            return 1;
-        if (
-            a.price * (1 - parseFloat(a.discount) / 100) >
-            b.price * (1 - parseFloat(b.discount) / 100)
-        )
-            return -1;
-        return 0;
     };
 
     handleFilter = (event) => {
@@ -152,23 +103,23 @@ export class FoodTable extends PureComponent {
         var sortFunc;
         switch (event.target.value) {
             case "na":
-                sortFunc = this.sortNA;
+                sortFunc = sortNA;
                 break;
 
             case "nd":
-                sortFunc = this.sortND;
+                sortFunc = sortND;
                 break;
 
             case "pa":
-                sortFunc = this.sortPA;
+                sortFunc = sortPA;
                 break;
 
             case "pd":
-                sortFunc = this.sortPD;
+                sortFunc = sortPD;
                 break;
 
             default:
-                sortFunc = this.sortNS;
+                sortFunc = sortNS;
                 break;
         }
         this.state.foodData.sort(sortFunc);
@@ -176,9 +127,8 @@ export class FoodTable extends PureComponent {
     };
 
     render() {
-       
 
-   return (
+        return (
             <div>
                 <div style={{ width: "100%" }}>
                     <Row
@@ -228,14 +178,6 @@ export class FoodTable extends PureComponent {
                             </Button>
                         ))}
 
-                        {/* <Form.Select size="lg">
-                                <option>Large select</option>
-                                </Form.Select>
-                                <br />
-                                <Form.Select>
-                                <option>Default select</option>
-                                </Form.Select>
-                            <br /> */}
                         <Form.Select
                             size="sm"
                             style={{
@@ -324,7 +266,7 @@ export class FoodTable extends PureComponent {
                                     image={data.imageUrls}
                                     discount={data.discount}
                                     description={data.description}
-                                        foodData={this.state.foodData}
+                                    foodData={this.state.foodData}
                                 />
                             );
                         })}
@@ -337,76 +279,76 @@ export class FoodTable extends PureComponent {
                         <Modal.Title>Add Food</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-    <Form>
-        <Form.Group controlId="foodName">
-            <Form.Label>Food Name</Form.Label>
-            <Form.Control
-                type="text"
-                placeholder="Enter food name"
-                name="newFoodName"
-                value={this.state.newFoodName}
-                onChange={this.handleInputChange}
-            />
-        </Form.Group>
-        <Form.Group controlId="foodPrice">
-            <Form.Label>Food Price</Form.Label>
-            <Form.Control
-                type="number"
-                placeholder="Enter food price"
-                name="newFoodPrice"
-                value={this.state.newFoodPrice}
-                onChange={this.handleInputChange}
-            />
-        </Form.Group>
-        <Form.Group controlId="foodDiscount">
-            <Form.Label>Food Discount</Form.Label>
-            <Form.Control
-                type="text"
-                placeholder="Enter food discount"
-                name="newFoodDiscount"
-                value={this.state.newFoodDiscount}
-                onChange={this.handleInputChange}
-            />
-        </Form.Group>
-        <Form.Group controlId="foodImage">
-            <Form.Label>Food Image URL</Form.Label>
-            <Form.Control
-                type="text"
-                placeholder="Enter food image URL"
-                name="newFoodImageUrl"
-                value={this.state.newFoodImageUrl}
-                onChange={this.handleInputChange}
-            />
-        </Form.Group>
-        <Form.Group controlId="foodType">
-  <Form.Label>Food Type</Form.Label>
-  <Form.Control
-    as="select"
-    name="type"
-    value={this.state.type}
-    onChange={this.handleFilterSelection}
-  >
-    <option value="">All</option>
-    <option value="Combo">Combo</option>
-    <option value="Foody">Foody</option>
-    <option value="Drink">Drink</option>
-    <option value="Appetizer">Appetizer</option>
-    <option value="Dessert">Dessert</option>
-  </Form.Control>
-</Form.Group>
+                        <Form>
+                            <Form.Group controlId="foodName">
+                                <Form.Label>Food Name</Form.Label>
+                                <Form.Control
+                                    type="text"
+                                    placeholder="Enter food name"
+                                    name="newFoodName"
+                                    value={this.state.newFoodName}
+                                    onChange={this.handleInputChange}
+                                />
+                            </Form.Group>
+                            <Form.Group controlId="foodPrice">
+                                <Form.Label>Food Price</Form.Label>
+                                <Form.Control
+                                    type="number"
+                                    placeholder="Enter food price"
+                                    name="newFoodPrice"
+                                    value={this.state.newFoodPrice}
+                                    onChange={this.handleInputChange}
+                                />
+                            </Form.Group>
+                            <Form.Group controlId="foodDiscount">
+                                <Form.Label>Food Discount</Form.Label>
+                                <Form.Control
+                                    type="text"
+                                    placeholder="Enter food discount"
+                                    name="newFoodDiscount"
+                                    value={this.state.newFoodDiscount}
+                                    onChange={this.handleInputChange}
+                                />
+                            </Form.Group>
+                            <Form.Group controlId="foodImage">
+                                <Form.Label>Food Image URL</Form.Label>
+                                <Form.Control
+                                    type="text"
+                                    placeholder="Enter food image URL"
+                                    name="newFoodImageUrl"
+                                    value={this.state.newFoodImageUrl}
+                                    onChange={this.handleInputChange}
+                                />
+                            </Form.Group>
+                            <Form.Group controlId="foodType">
+                                <Form.Label>Food Type</Form.Label>
+                                <Form.Control
+                                    as="select"
+                                    name="type"
+                                    value={this.state.type}
+                                    onChange={this.handleFilterSelection}
+                                >
+                                    <option value="">All</option>
+                                    <option value="Combo">Combo</option>
+                                    <option value="Foody">Foody</option>
+                                    <option value="Drink">Drink</option>
+                                    <option value="Appetizer">Appetizer</option>
+                                    <option value="Dessert">Dessert</option>
+                                </Form.Control>
+                            </Form.Group>
 
-        <Form.Group controlId="foodDescription">
-            <Form.Label>Food Description</Form.Label>
-            <Form.Control
-                as="textarea"
-                placeholder="Enter food description"
-                name="newFoodDescription"
-                value={this.state.newFoodDescription}
-                onChange={this.handleInputChange}
-            />
-        </Form.Group>
-    </Form>
-</Modal.Body>
+                            <Form.Group controlId="foodDescription">
+                                <Form.Label>Food Description</Form.Label>
+                                <Form.Control
+                                    as="textarea"
+                                    placeholder="Enter food description"
+                                    name="newFoodDescription"
+                                    value={this.state.newFoodDescription}
+                                    onChange={this.handleInputChange}
+                                />
+                            </Form.Group>
+                        </Form>
+                    </Modal.Body>
 
                     <Modal.Footer>
                         <Button
@@ -420,39 +362,6 @@ export class FoodTable extends PureComponent {
                         </Button>
                     </Modal.Footer>
                 </Modal>
-                <div style={{ backgroundColor: "#E9E9E9" }}>
-                    <div id="PaginationSearch">
-                        <nav aria-label="Page navigation example">
-                            <ul className="pagination justify-content-center pagination-lg">
-                                <li className="page-item">
-                                    <button
-                                        className="page-link text-primary"
-                                        aria-label="Previous"
-                                        /*onClick={() => ChangePage(pageNumber - 1)}*/ style={{
-                                            color: "rgb(246, 60, 60)",
-                                        }}
-                                    >
-                                        <span aria-hidden="true">&laquo;</span>
-                                    </button>
-                                </li>
-                                {/* {
-                                Array.from({ length: Math.ceil(temp.length / 10) }, (_, i) => i + 1).map((index) => { return <li class="page-item"><button class="page-link text-primary" onClick={() => Page(index)} style={{ color: 'rgb(246, 60, 60)' }}>{index}</button></li> })
-                            } */}
-                                <li className="page-item">
-                                    <button
-                                        className="page-link text-primary"
-                                        aria-label="Next"
-                                        /*onClick={() => ChangePage(pageNumber + 1)}*/ style={{
-                                            color: "rgb(246, 60, 60)",
-                                        }}
-                                    >
-                                        <span aria-hidden="true">&raquo;</span>
-                                    </button>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
                 <Footer />
             </div>
         );
