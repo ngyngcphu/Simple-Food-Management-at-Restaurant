@@ -13,6 +13,8 @@
 
 [VI. Hướng dẫn chạy dự án ở môi trường dev](#run)
 
+[VII. Video demo](#demo)
+
 *********************************
 <a name = "introduce"></a>
 
@@ -82,3 +84,9 @@ npm install
 npm start
 ```
 
+<a name ="demo"></a>
+
+## VII. Video demo
+
+Đây là link video demo của nhóm
+[Video Demo](https://www.youtube.com/watch?v=klgjsenr9FY)
